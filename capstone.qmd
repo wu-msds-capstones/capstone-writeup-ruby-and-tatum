@@ -13,6 +13,7 @@ format:
       dark: darkly
 ---
 
+# Introduction
 {{< include _01_intro.qmd >}}
 {{< include _02_background.qmd >}}
 {{< include _03_methods.qmd >}}
