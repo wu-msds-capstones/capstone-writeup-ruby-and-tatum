@@ -1,7 +1,7 @@
 ---
 lightbox: auto
 title: "Capstone Project"
-subtitle: Sports Betting
+subtitle: Sports Betting And Census Data
 authors:
   - Tatum Good
   - Ruby Thompson
