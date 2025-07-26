@@ -1,10 +1,10 @@
 ---
 lightbox: auto
 title: "Capstone Project"
-subtitle: Subtitle
+subtitle: Sports Betting
 authors:
-  - Tatum
-  - Ruby 
+  - Tatum Good
+  - Ruby Thompson
 bibliography: references.bib
 title-block-banner: true
 format: 
