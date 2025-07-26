@@ -1,4 +1,5 @@
 ---
+lightbox: auto
 title: "Capstone Project"
 subtitle: Subtitle
 authors:
