@@ -412,7 +412,7 @@ Figure 3g: Household income distribution by bracket and betting revenue.
 <p>To complement our traditional statistical modeling and visualizations, we employed a Random Forest regression model to understand the relative importance of different education levels in predicting per capita sports betting activity. Machine learning models, particularly ensemble methods like Random Forests, are used for uncovering nonlinear relationships and interactions between variables that standard linear regression might miss. Linear models assume additive, independent relationships and normally distributed residuals; Random Forests handles nonlinear relationships and potential multicollinearity between education categories, which are likely correlated in real-world populations.</p>
 <p>Our Random Forest model was built using the <code>randomForest</code> package in R. The outcome variable was <code>hand_percap</code> (sports betting handle per person in each state) and the predictors were the percentage of adults with each level of educational attainment: No high school diploma, High school diploma, Associate degree, Bachelor’s degree, and Graduate or professional degree. We trained the model with <code>importance = TRUE</code> to allow for feature importance analysis, helping us identify which variables contributed most to the prediction of sports betting handle.</p>
 <figure id="fig-edu_ml" class="figure">
-<img src="figures/figure4a.png" alt="edu_ml" width="800" class="figure-img">
+<img src="figures/figure4c.png" alt="edu_ml" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
 Figure 4a: Results from randomForest model comparing education rates to handle per resident in U.S. States.
 </figcaption>
@@ -422,7 +422,7 @@ Figure 4a: Results from randomForest model comparing education rates to handle p
 <p>To complement our statistical regression analysis and further examine the relationship between income and sports betting activity, we applied both linear and logistic machine learning models using the caret package in R. These models provided different analytical lenses: regression for predicting a continuous outcome (revenue per household from sports betting), and classification for distinguishing between “high” and “low” sports betting states based on income variables. These approaches helped us assess whether income-related factors meaningfully predict betting participation, and whether such effects persist across model types.</p>
 <p>We began by training a multiple linear regression model, using revenue_per_household as the continuous outcome. Predictor variables included mean_income_dollars, med_income_dollars, and total_households. This model allowed us to assess both the direction and strength of associations between income metrics and per-household betting activity. While total_households emerged as a statistically significant positive predictor (p = 0.018), the coefficients for both mean and median income were small and not significant, suggesting only a weak linear relationship between income levels and sports betting revenue at the state level. To evaluate predictive performance, we plotted actual versus predicted values for the linear model. Although the dashed 1:1 reference line provides a visual benchmark, the spread of points indicated moderate prediction accuracy. The model’s R^2 of 0.39 suggests that less than half of the variation in betting revenue per household can be explained by these three income-based predictors.</p>
 <figure id="fig-income_ml1" class="figure">
-<img src="figures/figure4b.png" alt="income_ml1" width="800" class="figure-img">
+<img src="figures/figure4a.png" alt="income_ml1" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
 Figure 4b: Linear regression predictions versus actual revenue per household.
 </figcaption>
@@ -431,7 +431,7 @@ Figure 4b: Linear regression predictions versus actual revenue per household.
 <figure id="fig-income_ml2" class="figure">
 <img src="figures/figure4b.png" alt="income_ml2" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 4b: Confusion matrix showing logistic regression performance in classifying states by betting revenue per household.
+Figure 4c: Confusion matrix showing logistic regression performance in classifying states by betting revenue per household.
 </figcaption>
 </figure>
 <p>The combination of these models reveals a consistent signal: income is not a particularly strong standalone predictor of sports betting participation, but total household count does show a consistent association. This could be reflecting structural factors like urbanization, market size, or marketing reach rather than income. Importantly, these results contrast with our findings on education, where the relationship with betting was both stronger and more interpretable. These machine learning models together help clarify that while income may play a role, it is not the dominant socioeconomic factor in predicting sports betting activity.</p>
