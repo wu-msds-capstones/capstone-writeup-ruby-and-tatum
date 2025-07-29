@@ -119,7 +119,7 @@ To complement our traditional statistical modeling and visualizations, we employ
 Our Random Forest model was built using the `randomForest` package in R. The outcome variable was `hand_percap` (sports betting handle per person in each state) and the predictors were the percentage of adults with each level of educational attainment: No high school diploma, High school diploma, Associate degree, Bachelor’s degree, and Graduate or professional degree. We trained the model with `importance = TRUE` to allow for feature importance analysis, helping us identify which variables contributed most to the prediction of sports betting handle.
 
 <figure id="fig-edu_ml">
-  <img src="figures/figure4a.png" alt="edu_ml" width="800">
+  <img src="figures/figure4c.png" alt="edu_ml" width="800">
   <figcaption style="font-size: 8px; color: #555;">
     Figure 4a: Results from randomForest model comparing education rates to handle per resident in U.S. States. 
   </figcaption>
@@ -134,7 +134,7 @@ To complement our statistical regression analysis and further examine the relati
 We began by training a multiple linear regression model, using revenue_per_household as the continuous outcome. Predictor variables included mean_income_dollars, med_income_dollars, and total_households. This model allowed us to assess both the direction and strength of associations between income metrics and per-household betting activity. While total_households emerged as a statistically significant positive predictor (p = 0.018), the coefficients for both mean and median income were small and not significant, suggesting only a weak linear relationship between income levels and sports betting revenue at the state level. To evaluate predictive performance, we plotted actual versus predicted values for the linear model. Although the dashed 1:1 reference line provides a visual benchmark, the spread of points indicated moderate prediction accuracy. The model’s R^2  of 0.39 suggests that less than half of the variation in betting revenue per household can be explained by these three income-based predictors.
 
 <figure id="fig-income_ml1">
-  <img src="figures/figure4b.png" alt="income_ml1" width="800">
+  <img src="figures/figure4a.png" alt="income_ml1" width="800">
   <figcaption style="font-size: 8px; color: #555;">
     Figure 4b: Linear regression predictions versus actual revenue per household.
   </figcaption>
@@ -145,7 +145,7 @@ To explore the data from a different angle, we transformed the continuous outcom
 <figure id="fig-income_ml2">
   <img src="figures/figure4b.png" alt="income_ml2" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 4b: Confusion matrix showing logistic regression performance in classifying states by betting revenue per household.
+    Figure 4c: Confusion matrix showing logistic regression performance in classifying states by betting revenue per household.
   </figcaption>
 </figure>
 
