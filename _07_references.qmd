@@ -1,4 +1,10 @@
 # References
 
+Welte, J. W., Barnes, G. M., Wieczorek, W. F., Tidwell, M. C., & Parker, J. C. (2004). Risk factors for pathological gambling. Addictive Behaviors, 29(2), 323–335. https://doi.org/10.1016/j.addbeh.2003.08.007 
+
+ Williams, R. J., Volberg, R. A., & Stevens, R. M. G. (2011). The Population Prevalence of Problem Gambling: Methodological Influences, Standardized Rates, Jurisdictional Differences, and Worldwide Trends. Ontario Problem Gambling Research Centre. https://prism.ucalgary.ca/handle/1880/48495 
+
+ Volberg, R. A., Nysse-Carris, K. L., & Gerstein, D. R. (2010). 2006 California Problem Gambling Prevalence Survey. California Department of Alcohol and Drug Programs. https://www.problemgambling.ca/EN/Documents/CaliforniaProblemGamblingPrevalenceSurvey.pdf 
+
 :::{#refs}
 :::
