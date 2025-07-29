@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: manuscript
   output-dir: _output
   resources:
     - "_*.qmd"
