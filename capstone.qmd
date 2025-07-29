@@ -1,7 +1,7 @@
 ---
 lightbox: auto
-title: "Capstone Project"
-subtitle: Sports Betting And Census Data
+title: "The Odds of Participation"
+subtitle: Socioeconomic Predictors of Sports-Gambling Activity and Its Implications
 authors:
   - Tatum Good
   - Ruby Thompson
