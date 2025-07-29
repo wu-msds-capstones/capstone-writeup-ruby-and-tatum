@@ -6,7 +6,7 @@ Once scraped, we employed SQL to clean and normalize the raw JSON responses into
 <figure id="fig-erd">
   <img src="figures/figure1a.png" alt="ERD diagram" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 1: This figure displays an ERD normalized to third normal form (3NF), highlighting primary keys and table relationships.
+    Figure 1a: This figure displays an ERD normalized to third normal form (3NF), highlighting primary keys and table relationships.
   </figcaption>
 </figure>
 
