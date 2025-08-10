@@ -321,7 +321,7 @@ div.csl-indent {
 <figure id="fig-erd" class="figure">
 <img src="figures/figure1a.png" alt="ERD diagram" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 1a: This figure displays an ERD normalized to third normal form (3NF), highlighting primary keys and table relationships.
+Figure 1: This figure displays an ERD normalized to third normal form (3NF), highlighting primary keys and table relationships.
 </figcaption>
 </figure>
 <p>As seen above, to support analysis of the relationship between sports betting activity and socioeconomic trends across U.S. states, the data was structured into a schema that separates income, education, and betting metrics into connected tables to facilitate flexible joins. <code>Geoid</code> and <code>year</code> serve as foreign keys linking all domain-specific tables (income, education, and sports betting) to the central location table that maps each geoid to a state-level <code>place_name</code>. Income data is organized into two fact tables. The <code>income_distribution</code> table captures the percentage of households within each income bracket and household type, while the <code>income_summary</code> table provides metrics such as total households, median income, and mean income by household type. These reference the <code>income_brackets</code> and <code>household_type</code> dimension tables for consistency. Education data is stored in the <code>edu_long</code> table, which reports the number of individuals by education level and age group. It joins the <code>age_group_map</code> table to normalize age categories. Sports betting data is stored in <code>clean_sports</code>, which contains metrics such as handle, revenue, hold, and taxes. This table integrates with the rest of the schema via shared identifiers. This structure allows for efficient querying as we explore the research question.</p>
@@ -336,7 +336,7 @@ Figure 1a: This figure displays an ERD normalized to third normal form (3NF), hi
 <figure id="fig-lm_edu" class="figure">
 <img src="figures/figure2a.png" alt="lm_edu" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 2a: Linear model results comparing education rates to sport-betting handle in each state.
+Figure 2: Linear model results comparing education rates to sport-betting handle in each state.
 </figcaption>
 </figure>
 <p>This modeling approach was appropriate for our research question because we sought to understand not just the presence of a relationship, but the strength and direction of influence that each educational level may exert on sports betting participation.</p>
@@ -347,7 +347,7 @@ Figure 2a: Linear model results comparing education rates to sport-betting handl
 <figure id="fig-corr_income" class="figure">
 <img src="figures/figure2b.png" alt="corr_income" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 2b: Correlation analysis exploring linear relationships between income and sportsbetting metrics.
+Figure 3: Correlation analysis exploring linear relationships between income and sportsbetting metrics.
 </figcaption>
 </figure>
 <p>Our analysis utilized state-level data and focused on three key predictors: mean income <code>mean_income_dollars</code>, median income <code>med_income_dollars</code>, and the total number of households <code>total_households</code>. We first modeled total sports betting handle as a function of these variables. As shown in Figure 2b, the results indicated that all three predictors were statistically significant. In particular, total households had the strongest relationship, with each additional household associated with an estimated $1,276 increase in total handle, suggesting a scale effect. Mean income had a positive effect, while median income had a negative effect, though both were smaller in magnitude. This comparison between mean and median income effects may point toward the role of income inequality.</p>
@@ -357,7 +357,7 @@ Figure 2b: Correlation analysis exploring linear relationships between income an
 <figure id="fig-norm_lm_income" class="figure">
 <img src="figures/figure2c.png" alt="norm_lm_income" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 2c: Normalized linear models analyzing our key predictors relationship with handle and revenue.
+Figure 4: Normalized linear models analyzing our key predictors relationship with handle and revenue.
 </figcaption>
 </figure>
 <p>The normalized model yielded an adjusted R-squared value of <strong>0.335</strong>, indicating that approximately <strong>33.5%</strong> of the variation in <code>revenue_per_household</code> can be explained by the two income variables. This represents a substantial improvement in explanatory power compared to models based solely on raw totals.</p>
@@ -372,7 +372,7 @@ Figure 2c: Normalized linear models analyzing our key predictors relationship wi
 <figure id="fig-mean_hand" class="figure">
 <img src="figures/figure3a.png" alt="mean_hand" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3a: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
+Figure 5: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
 </figcaption>
 </figure>
 <p>This grouped bar chart was created to compare regional averages of sports betting contribution and educational attainment. Using regional grouping (Midwest, Northeast, South, and West) helped reduce state-level noise and highlight macro trends across large geographies. The decision to normalize state betting volume by national handle (rather than just raw values) allows for meaningful cross-region comparison despite population differences, as mentioned earlier.</p>
@@ -380,7 +380,7 @@ Figure 3a: Mean percentage of sports betting handle contributed by each region c
 <figure id="fig-combo1" class="figure">
 <img src="figures/figure3b.png" alt="combo1" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3b: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor’s degree.
+Figure 6: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor’s degree.
 </figcaption>
 </figure>
 <p>To better understand geographic variance, we used choropleth maps to visualize state-level differences in both betting behavior and education attainment. Mapping handle per capita better reflects how intensely betting is occurring per resident rather than simply the sheer total. Pairing this map with a visualization of bachelor’s degree prevalence allowed us to visually test whether educational attainment is geographically co-located with higher levels of betting activity. We particularly chose to visualize bachelor’s degrees based on the results from the linear model, which weight bachelor’s degrees as having the highest impact on sports betting handle.</p>
@@ -388,7 +388,7 @@ Figure 3b: Left: State-level sports betting handle per person. Right: Percent of
 <figure id="fig-combo2" class="figure">
 <img src="figures/figure3c.png" alt="combo2" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3c: Left: Betting handle vs.&nbsp;high school diploma rates. Right: Betting handle vs.&nbsp;bachelor’s degree rates.
+Figure 7: Left: Betting handle vs.&nbsp;high school diploma rates. Right: Betting handle vs.&nbsp;bachelor’s degree rates.
 </figcaption>
 </figure>
 <p>To quantify the relationships suggested by our bar chart and map visualizations, we used scatterplots with fitted linear regression lines. This approach is effective for testing the direction and form of a relationship between two continuous variables; here, educational attainment percentage and percentage of national handle per state.</p>
@@ -400,14 +400,14 @@ Figure 3c: Left: Betting handle vs.&nbsp;high school diploma rates. Right: Betti
 <figure id="fig-rev_per_h" class="figure">
 <img src="figures/figure3d.png" alt="rev_per_h" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3d: State-level sports betting revenue per household vs mean income.
+Figure 8: State-level sports betting revenue per household vs mean income.
 </figcaption>
 </figure>
 <p>To assess the relationship between income and betting intensity, we created a scatterplot comparing mean household income to betting <code>revenue_per_household</code>. We chose to normalize betting revenue by the number of households in each state to control for population size. This can otherwise obscure behavioral trends in larger states. A positive linear trend emerged, suggesting that higher-income states tend to generate more betting <code>revenue_per_household</code>. This result challenges the common narrative that sports betting is driven primarily by economic desperation. This indicates instead that participation may be more prominent in higher-income populations with greater discretionary spending capacity.</p>
 <figure id="fig-combo_maps" class="figure">
 <img src="figures/figure3e.png" alt="combo_maps" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3e: Maps normalized revenue per household by state and % of households of low-income households (defined as under $35k).
+Figure 9: Maps normalized revenue per household by state and % of households of low-income households (defined as under $35k).
 </figcaption>
 </figure>
 <p>To visualize geographic variation in income and betting simultaneously, we employed a pair of choropleth maps. The left-hand map displays normalized betting <code>revenue_per_household</code>, while the right-hand map shows the percentage of households earning under $35,000 annually (based on aggregated census income brackets).</p>
@@ -415,14 +415,14 @@ Figure 3e: Maps normalized revenue per household by state and % of households of
 <figure id="fig-low_income" class="figure">
 <img src="figures/figure3f.png" alt="low_income" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3f: Sports betting handle vs % low-income households.
+Figure 10: Sports betting handle vs % low-income households.
 </figcaption>
 </figure>
 <p>To further interrogate the relationship between low-income prevalence and betting behavior, we plotted the percentage of low-income households in each state against the state’s total sports betting handle. This scatterplot revealed a moderate negative correlation, suggesting that states with larger proportions of low-income households tend to contribute less to national betting volume. While this may seem counterintuitive to some policy narratives, it aligns with economic theory suggesting that disposable income is a prerequisite for discretionary spending, including gambling.</p>
 <figure id="fig-dist_brack" class="figure">
 <img src="figures/figure3g.png" alt="dist_brack" width="800" class="figure-img">
 <figcaption style="font-size: 8px; color: #555;">
-Figure 3g: Household income distribution by bracket and betting revenue.
+Figure 11: Household income distribution by bracket and betting revenue.
 </figcaption>
 </figure>
 <p>To further explore this relationship, we plotted the percentage of low-income households against total state betting handle. This scatterplot revealed a negative correlation, suggesting that states with more low-income households tend to contribute less to total national betting volume. Finally, we created a faceted bar chart displaying income distribution by bracket within each state, colored by betting revenue per capita. This visualization allowed us to examine intra-state income patterns and their correspondence with betting behavior.</p>
@@ -442,7 +442,8 @@ Figure 3g: Household income distribution by bracket and betting revenue.
 </section>
 <section id="data-ethics" class="level2">
 <h2 class="anchored" data-anchor-id="data-ethics">Data Ethics</h2>
-<p>We used publicly available datasets from the U.S. Census and state-reported sports betting metrics. This approach minimized privacy risks, as no personally identifiable information (PII) was collected or processed at any stage of the analysis. Nevertheless, working with demographic and behavioral indicators, such as income, education, and gambling activity, still required caution. Even when data is de-identified, aggregation can lead to the reinforcement of stereotypes or the masking of structural inequities. To mitigate this risk, we chose to analyze only state-level trends, avoiding county- or zip-code-level disaggregation that could disproportionately spotlight or stigmatize smaller or more vulnerable populations; and we encourage future research into this sector to evaluate aggregated data as a precaution as well. We were careful not to frame our findings in terms of moral judgment or individual responsibility, instead focusing on structural correlations and the potential for policy-level interventions. If future analysis were to consist of individual-level analysis, findings from that study could open the door to manipulative use of people’s data. For example, if a sports-betting company can predict an individual’s behavior associated with gambling, they can direct specialized ads and notifications to maximize handle from that user. This could lead to financial disturbance in that person’s life, especially if they already struggle with gambling habits.</p>
+<p>We used publicly available datasets from the U.S. Census and state-reported sports betting metrics. This approach minimized privacy risks, as no personally identifiable information (PII) was collected or processed at any stage of the analysis. Nevertheless, working with demographic and behavioral indicators, such as income, education, and gambling activity, still required caution. Even when data is de-identified, aggregation can lead to the reinforcement of stereotypes or the masking of structural inequities. To mitigate this risk, we chose to analyze only state-level trends, avoiding county- or zip-code-level disaggregation that could disproportionately spotlight or stigmatize smaller or more vulnerable populations; and we encourage future research into this sector to evaluate aggregated data as a precaution as well.</p>
+<p>We were careful not to frame our findings in terms of moral judgment or individual responsibility, instead focusing on structural correlations and the potential for policy-level interventions. If future analysis were to consist of individual-level analysis, findings from that study could open the door to manipulative use of people’s data. For example, if a sports-betting company can predict an individual’s behavior associated with gambling, they can direct specialized ads and notifications to maximize handle from that user. This could lead to financial disturbance in that person’s life, especially if they already struggle with gambling habits.</p>
 <p>Another ethical concern lies in bias baked into the original data sources. U.S. Census data, while comprehensive, has known limitations in how it categorizes income and education. It may undercount certain populations (especially undocumented individuals, rural residents, and Indigenous communities), which can skew representational accuracy. Sports betting data, on the other hand, only includes legal, reported activity, ignoring illegal or unregulated markets where participation may also be significant, particularly in states that have not legalized betting. This creates an incomplete picture of the true landscape and potentially biases our conclusions toward the behavior of more affluent, digitally connected populations who are more likely to use app-based platforms. Our analysis consisted of only 26 states, barely more than half of US states. While we prefaced this in our writing, if it were not properly disclosed it could lead to over-generalized assumptions about U.S. sports betting trends.</p>
 <p>Lastly, we would like to recognize how our results could be interpreted, or misinterpreted, in public discourse. Gambling is a socially and politically charged topic, often laden with stigma. Suggesting that certain populations are more likely to gamble can quickly spiral into harmful narratives about irresponsibility or moral failing. Our aim was not to pathologize individuals, but to investigate structural patterns that may reflect underlying disparities in access, education, or economic opportunity. To that end, our findings are not meant to be deterministic conclusions, but rather context for further research and general awareness.</p>
 </section>
