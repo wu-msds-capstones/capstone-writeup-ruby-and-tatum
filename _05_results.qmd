@@ -9,7 +9,7 @@ Our education model examined the relationship between the percentage of a state�
 <figure id="fig-lm_edu">
   <img src="figures/figure2a.png" alt="lm_edu" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 2a: Linear model results comparing education rates to sport-betting handle in each state.
+    Figure 2: Linear model results comparing education rates to sport-betting handle in each state.
   </figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ Given the complexity of socioeconomic factors and their possible overlap with po
 <figure id="fig-corr_income">
   <img src="figures/figure2b.png" alt="corr_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 2b: Correlation analysis exploring linear relationships between income and sportsbetting metrics.
+    Figure 3: Correlation analysis exploring linear relationships between income and sportsbetting metrics.
   </figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ In this model (see Figure 2c), mean income remained a significant positive predi
 <figure id="fig-norm_lm_income">
   <img src="figures/figure2c.png" alt="norm_lm_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 2c: Normalized linear models analyzing our key predictors relationship with handle and revenue.
+    Figure 4: Normalized linear models analyzing our key predictors relationship with handle and revenue.
   </figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ Because our study investigates structural socioeconomic predictors of sports bet
 <figure id="fig-mean_hand">
   <img src="figures/figure3a.png" alt="mean_hand" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3a: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
+    Figure 5: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
   </figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ Including education categories side-by-side reveals internal contrasts: for exam
 <figure id="fig-combo1">
   <img src="figures/figure3b.png" alt="combo1" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3b: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor's degree.
+    Figure 6: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor's degree.
   </figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ A noticeable feature of this graphic is that Northeastern states like New Jersey
 <figure id="fig-combo2">
   <img src="figures/figure3c.png" alt="combo2" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3c: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. bachelor’s degree rates.
+    Figure 7: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. bachelor’s degree rates.
   </figcaption>
 </figure>
 
@@ -107,7 +107,7 @@ By incorporating both normalized and disaggregated income measures, we were able
 <figure id="fig-rev_per_h">
   <img src="figures/figure3d.png" alt="rev_per_h" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3d: State-level sports betting revenue per household vs mean income.
+    Figure 8: State-level sports betting revenue per household vs mean income.
   </figcaption>
 </figure>
 
@@ -116,7 +116,7 @@ To assess the relationship between income and betting intensity, we created a sc
 <figure id="fig-combo_maps">
   <img src="figures/figure3e.png" alt="combo_maps" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3e: Maps normalized revenue per household by state and % of households of low-income households (defined as under $35k).
+    Figure 9: Maps normalized revenue per household by state and % of households of low-income households (defined as under $35k).
   </figcaption>
 </figure>
 
@@ -127,7 +127,7 @@ These maps enable side-by-side comparison of betting intensity and economic hard
 <figure id="fig-low_income">
   <img src="figures/figure3f.png" alt="low_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3f: Sports betting handle vs % low-income households.
+    Figure 10: Sports betting handle vs % low-income households.
   </figcaption>
 </figure>
 
@@ -136,7 +136,7 @@ To further interrogate the relationship between low-income prevalence and bettin
 <figure id="fig-dist_brack">
   <img src="figures/figure3g.png" alt="dist_brack" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3g: Household income distribution by bracket and betting revenue.
+    Figure 11: Household income distribution by bracket and betting revenue.
   </figcaption>
 </figure>
 
