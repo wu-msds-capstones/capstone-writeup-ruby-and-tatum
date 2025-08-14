@@ -120,10 +120,7 @@ On the right, we observe a positive relationship between bachelor's degree attai
 
 Ultimately, these visualizations further helped to debunk our hypothesis, instead, states with higher proportions of college-educated adults appear to participate more in sports betting, not less– a finding that would be difficult to identify through tables or regression coefficients alone.
 
---Tatum Section
-To explore the relationship between income and sports betting participation across U.S. states, we used data visualizations to uncover patterns not immediately visible through numeric summaries or regression output. These visual tools helped us examine how both average and low-income populations relate to betting behavior, using a combination of scatterplots and choropleth maps. 
-
-By incorporating both normalized and disaggregated income measures, we were able to contextualize betting activity within broader socioeconomic landscapes and challenge simplistic assumptions about gambling participation.
+We did a similar approach to explore the relationship between income and sports betting participation across U.S. states. These visual tools helped us examine how both average and low-income populations relate to betting behavior, using a combination of scatterplots and choropleth maps. By incorporating both normalized and disaggregated income measures, we were able to contextualize betting activity within broader socioeconomic landscapes and challenge simplistic assumptions about gambling participation.
 
 To visualize geographic variation in income and betting simultaneously, we employed the use of choropleth maps. The map in Figure 9 displays normalized betting `handle_per_household`, in relation to percentage of low-income household within each state. 
 
