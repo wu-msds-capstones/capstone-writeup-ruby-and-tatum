@@ -2,4 +2,14 @@
 
 The following appendix provides more supporting materials that help complement the main analysis.
 
-## Data Dictionaries {#data dictionary}
+## Data Dictionaries {#data-dictionary}
+::: {.callout-note collapse=true title="income_brackets"}
+This table contains underlying aggregated statisical data, which will not show up in the typical box score.(Baseball Savant)
+
+| **Variable**      | **Name**                        | **Description**                                                                 |
+|-------------------|----------------------------------|----------------------------------------------------------------------------------|
+| `bracket_id`       | Bracket ID                       | Unique identifier for each income bracket.                                               |
+| `bracket_name`      | Bracket Name                      | Name of the income bracket.                                |
+
+:::
+
