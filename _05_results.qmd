@@ -123,9 +123,9 @@ To visualize geographic variation in income and betting simultaneously, we emplo
 These maps enable side-by-side comparison of betting intensity and economic hardship across states. Notably, states with higher concentrations of low-income households, such as Mississippi and West Virginia, tend to have lower per-household betting revenue. This reinforces the earlier observation that sports betting may not be concentrated in economically distressed regions, but rather in areas with a larger share of middle- and high-income households. This highlights outliers, such as states with modest income profiles but unexpectedly high betting activity, prompting further inquiry into regulatory differences, cultural norms, or marketing intensity as potential drivers.
 
 <figure id="fig-low_income">
-  <img src="figures/figure3f.png" alt="low_income" width="800">
+  <img src="figures/scatter_in.png" alt="low_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 10: Sports betting handle vs % low-income households.
+    Figure 10: Scatterplot plotting the average sports betting handle per household vs % low-income households by state.
   </figcaption>
 </figure>
 
