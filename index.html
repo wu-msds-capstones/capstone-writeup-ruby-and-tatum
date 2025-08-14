@@ -361,6 +361,27 @@ Figure 3: Correlation analysis exploring linear relationships between income and
 </figure>
 <p>Our analysis utilized state-level data and focused on three key predictors: mean income <code>mean_income_dollars</code>, median income <code>med_income_dollars</code>, and the total number of households <code>total_households</code>. We first modeled total sports betting handle as a function of these variables. As shown in Figure 3, the results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well.</p>
 <p>A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. Based on</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Pre-Normalization</th>
+<th>Post-Normalization</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R²</td>
+<td>0.7224 (72.24%)</td>
+<td>0.4027 (40.27%)</td>
+</tr>
+<tr class="even">
+<td>P-value</td>
+<td>0.00366</td>
+<td>0.000192</td>
+</tr>
+</tbody>
+</table>
 <p>To refine this analysis, we created a normalized model using sports betting revenue per household <code>revenue_per_household</code> as the response variable. This adjustment removed the confounding influence of state population size and allowed us to better isolate the impact of income itself.</p>
 <p>In this model (see Figure 4), mean income remained a significant positive predictor, with each additional dollar of mean income associated with a <strong>$0.0049</strong> increase in per-household betting revenue. Median income had a marginally significant negative association, potentially reflecting a skew in how wealth is distributed within states.</p>
 <figure id="fig-norm_lm_income" class="figure">

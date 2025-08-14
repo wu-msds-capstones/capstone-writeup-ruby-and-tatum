@@ -35,6 +35,12 @@ Our analysis utilized state-level data and focused on three key predictors: mean
 
 A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. Based on
 
+| Variable        | Pre-Normalization | Post-Normalization |
+|-----------------|-------------------|--------------------|
+| R²              | 0.7224 (72.24%)   | 0.4027 (40.27%)    |
+| P-value         | 0.00366           | 0.000192           |
+
+
 To refine this analysis, we created a normalized model using sports betting revenue per household `revenue_per_household` as the response variable. This adjustment removed the confounding influence of state population size and allowed us to better isolate the impact of income itself. 
 
 In this model (see Figure 4), mean income remained a significant positive predictor, with each additional dollar of mean income associated with a **$0.0049** increase in per-household betting revenue. Median income had a marginally significant negative association, potentially reflecting a skew in how wealth is distributed within states.
