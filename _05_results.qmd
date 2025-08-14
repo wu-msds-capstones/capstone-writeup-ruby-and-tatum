@@ -45,7 +45,7 @@ These results complement our education analysis by highlighting that not only do
 
 ## Machine Learning
 
-TAs mentioned above, we employed a random forest regression model to understand the relative importance of different education levels in predicting per capita sports betting activity. Machine learning models, particularly methods like random forests, are used for uncovering nonlinear relationships and interactions between variables that standard linear regression might miss. Linear models assume additive, independent relationships and normally distributed residuals; Random Forests handles nonlinear relationships and potential multicollinearity between education categories, which are likely correlated in real-world populations.
+As mentioned above, we employed a random forest regression model to understand the relative importance of different education levels in predicting per capita sports betting activity. Machine learning models, particularly methods like random forests, are used for uncovering nonlinear relationships and interactions between variables that standard linear regression might miss. Linear models assume additive, independent relationships and normally distributed residuals; Random Forests handles nonlinear relationships and potential multicollinearity between education categories, which are likely correlated in real-world populations.
 
 Our random forest model was built using the `randomForest` package in R. The outcome variable was `hand_per_cap` with the same predictors as our statistical thinking linear model. (Percentages of populations with a certain education level)  We trained the model with feature importance analysis, helping us identify which variables contributed most to the prediction of sports betting handle.
 
