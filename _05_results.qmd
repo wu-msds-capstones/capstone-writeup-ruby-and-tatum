@@ -139,14 +139,7 @@ These maps enable side-by-side comparison of betting intensity and economic hard
 
 To further interrogate the relationship between low-income prevalence and betting behavior, we plotted the percentage of low-income households in each state against the state’s total sports betting handle. This scatterplot revealed a moderate negative correlation, suggesting that states with larger proportions of low-income households tend to contribute less to national betting volume. While this may seem counterintuitive to some policy narratives, it aligns with economic theory suggesting that disposable income is a prerequisite for discretionary spending, including gambling.
 
-<figure id="fig-dist_brack">
-  <img src="figures/figure3g.png" alt="dist_brack" width="800">
-  <figcaption style="font-size: 8px; color: #555;">
-    Figure 11: Household income distribution by bracket and betting revenue.
-  </figcaption>
-</figure>
-
-To further explore this relationship, we plotted the percentage of low-income households against total state betting handle. This scatterplot revealed a negative correlation, suggesting that states with more low-income households tend to contribute less to total national betting volume. Finally, we created a faceted bar chart displaying income distribution by bracket within each state, colored by betting revenue per capita. This visualization allowed us to examine intra-state income patterns and their correspondence with betting behavior. 
+To further explore this relationship, we plotted the percentage of low-income households against total state betting handle. This scatterplot revealed a negative correlation, suggesting that states with more low-income households tend to contribute less to total national betting volume. 
 
 States with greater proportions of middle- and upper-income brackets often also had higher per capita betting revenue, offering yet another lens into how income levels may facilitate or constrain sports betting activity. These visuals suggest that sports betting in the United States is not predominantly driven by poverty, but rather may be a behavior more concentrated among middle- and higher-income earners. This finding directly complicates common assumptions and reveals the value of visualizing normalized and disaggregated income data alongside betting metrics. 
 
