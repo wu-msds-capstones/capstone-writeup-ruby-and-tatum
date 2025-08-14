@@ -61,8 +61,9 @@ Provides aggregated summary statistics about income for specific locations and y
 | `geoid`              | Geographic ID        | Links to [`location`](#location).                                         |
 | `household_type_id`  | Household Type ID     | Links to [`household_type`](#household_type).                             |
 | `total_households`   | Total Households     | Total number of households for that year, location, and household type.   |
-| `med_income_dollars` | Median Income ($)    | Median household income in dollars.                                       |
-| `mean_income_dollars`| Mean Income ($)      | Mean household income in dollars.                                        |
+| `med_income_dollars` | Median Income    | Median household income in dollars.                                       |
+
+| `mean_income_dollars`| Mean Income     | Mean household income in dollars.                                        |
 
 :::
 
