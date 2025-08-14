@@ -22,22 +22,22 @@ The model yielded a modest R-squared value of **0.222**, indicating that approxi
 
 To explore the potential correlation between income levels and sports betting activity, we applied statistical thinking by using multiple linear regression models. This approach allowed us to structure our data into a formal framework, quantify relationships between income metrics and sports betting participation, and assess the significance of each variable while controlling for others. 
 
-Given the complexity of socioeconomic factors and their possible overlap with population size, our income model incorporated both household count and income variables, using per-household normalization to avoid misleading conclusions driven by raw scale. Before modeling, we conducted a correlation analysis to evaluate the strength of linear relationships between income metrics and sports betting variables (see Figure 2b). This preliminary step confirmed strong correlations between total households and both handle and revenue, as well as moderate correlations with income metrics. 
+Given the complexity of socioeconomic factors and their possible overlap with population size, our income model incorporated both household count and income variables, using per-household normalization to avoid misleading conclusions driven by raw scale. Before modeling, we conducted a correlation analysis to evaluate the strength of linear relationships between income metrics and sports betting variables (see Figure 3). This preliminary step confirmed strong correlations between total households and both handle and revenue, as well as moderate correlations with income metrics. 
 
 <figure id="fig-corr_income">
   <img src="figures/figure2b.png" alt="corr_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3: Correlation analysis exploring linear relationships between income and sportsbetting metrics.
+    Figure 3: Correlation analysis exploring linear relationships between income and sportsbetting metrics where the biggest correlations across our data are between mean_income_dollars with handle or revenue.
   </figcaption>
 </figure>
 
-Our analysis utilized state-level data and focused on three key predictors: mean income `mean_income_dollars`, median income `med_income_dollars`, and the total number of households `total_households`. We first modeled total sports betting handle as a function of these variables. As shown in Figure 2b, the results indicated that all three predictors were statistically significant. In particular, total households had the strongest relationship, with each additional household associated with an estimated $1,276 increase in total handle, suggesting a scale effect. Mean income had a positive effect, while median income had a negative effect, though both were smaller in magnitude. This comparison between mean and median income effects may point toward the role of income inequality. 
+Our analysis utilized state-level data and focused on three key predictors: mean income `mean_income_dollars`, median income `med_income_dollars`, and the total number of households `total_households`. We first modeled total sports betting handle as a function of these variables. As shown in Figure 3, the results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well.
 
-A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. 
+A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. Based on
 
 To refine this analysis, we created a normalized model using sports betting revenue per household `revenue_per_household` as the response variable. This adjustment removed the confounding influence of state population size and allowed us to better isolate the impact of income itself. 
 
-In this model (see Figure 2c), mean income remained a significant positive predictor, with each additional dollar of mean income associated with a **$0.0049** increase in per-household betting revenue. Median income had a marginally significant negative association, potentially reflecting a skew in how wealth is distributed within states.
+In this model (see Figure 4), mean income remained a significant positive predictor, with each additional dollar of mean income associated with a **$0.0049** increase in per-household betting revenue. Median income had a marginally significant negative association, potentially reflecting a skew in how wealth is distributed within states.
 
 <figure id="fig-norm_lm_income">
   <img src="figures/figure2c.png" alt="norm_lm_income" width="800">
