@@ -15,7 +15,7 @@ This finding runs contrary to our initial hypothesis that lower educational atta
 
 We applied a similar statistical thinking approach to explore the potential correlation between income levels and sports betting activity. Our income model incorporated both household count and income variables, using per-household normalization to avoid misleading conclusions driven by raw scale. Before modeling anything, we conducted a correlation analysis to evaluate the strength of linear relationships between income metrics and sports betting variables (see Figure 3). This preliminary step confirmed strong correlations between total households and both handle and revenue, as well as moderate correlations with income metrics. 
 
-Our analysis utilized state-level data and focused on three key predictors: mean income `mean_income_dollars`, median income `med_income_dollars`, and the total number of households `total_households`. We first modeled total sports betting handle as a function of these variables. As shown in Figure 3, the results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well.
+Our analysis utilized state-level data and focused on three key predictors: mean income (`mean_income_dollars`), median income (`med_income_dollars`), and the total number of households (`total_households`). We first modeled total sports betting handle as a function of these variables. As shown in Figure 3,The results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well. A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture.
 
 <figure id="fig-corr_income">
   <img src="figures/figure2b.png" alt="corr_income" width="800">
@@ -24,6 +24,7 @@ Our analysis utilized state-level data and focused on three key predictors: mean
   </figcaption>
 </figure>
 
+To address the issue of population bias, we decided to normalize handle by dividing it by the total number of households, creating the handle_per_household metric. This caused a significant shift in our model's performance metrics, as shown below:
 A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. Based on
 
 | Variable        | Pre-Normalization | Post-Normalization |
@@ -32,20 +33,10 @@ A high mean income coupled with a relatively lower median suggests a skewed dist
 | P-value         | 0.00366           | 0.000192           |
 
 
-To refine this analysis, we created a normalized model using sports betting revenue per household `revenue_per_household` as the response variable. This adjustment removed the confounding influence of state population size and allowed us to better isolate the impact of income itself. 
+Before normalization, our model explained 72% of the variance—but much of this was inflated by population effects. We found that total_households was actually inflating our R² and gave a misleading sense of predictive power. After adjusting for population size, our model explains 40% of the variance and is still highly significant, meaning we’ve removed a key bias while retaining a real relationship. By removing the population size effect, this normalization allowed us to model a true underlying relationship between our variables, making the statistical relationship more clear.
 
-In this model (see Figure 4), mean income remained a significant positive predictor, with each additional dollar of mean income associated with a **$0.0049** increase in per-household betting revenue. Median income had a marginally significant negative association, potentially reflecting a skew in how wealth is distributed within states.
+These linear models provided a solid foundation for understanding the direct associations between our variables, but their assumptions of linearity and independence could potentially miss more complex interactions. To explore these deeper relationships and validate our findings using a different analytical lens, we turned to machine learning. These models allowed us to move beyond simple correlations and uncover nonlinear patterns that might be driving sports betting activity, providing a more robust and nuanced view of the data.
 
-<figure id="fig-norm_lm_income">
-  <img src="figures/figure2c.png" alt="norm_lm_income" width="800">
-  <figcaption style="font-size: 8px; color: #555;">
-    Figure 4: Normalized linear models analyzing our key predictors relationship with handle and revenue.
-  </figcaption>
-</figure>
-
-The normalized model yielded an adjusted R-squared value of **0.335**, indicating that approximately **33.5%** of the variation in `revenue_per_household` can be explained by the two income variables. This represents a substantial improvement in explanatory power compared to models based solely on raw totals. 
-
-Compared to the unnormalized model predicting total handle, which explained only **12.4%** of the variance (adjusted R² = **0.124**), the normalized model's adjusted R² of **0.335** indicates a substantial improvement. This suggests that per-household betting behavior is more systematically associated with income metrics than raw betting totals are. 
 
 Taken together, the findings suggest that states with higher mean income levels tend to see greater per-household betting participation, possibly due to increased disposable income or different spending behaviors among higher-income populations.
 
