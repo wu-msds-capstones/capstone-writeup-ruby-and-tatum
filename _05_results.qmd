@@ -139,13 +139,11 @@ As shown in Figure 10, this scatterplot provided the final confirmation, reveali
   </figcaption>
 </figure>
 
-While this may seem counterintuitive to some policy narratives, it aligns with economic theory suggesting that disposable income is a prerequisite for discretionary spending, including gambling.
-
-To assess the relationship between income and betting intensity, we created a scatterplot comparing mean household income to betting `revenue_per_household`. We chose to normalize betting revenue by the number of households in each state to control for population size. This can otherwise obscure behavioral trends in larger states. A positive linear trend emerged, suggesting that higher-income states tend to generate more betting `revenue_per_household`. This result challenges the common narrative that sports betting is driven primarily by economic desperation. This indicates instead that participation may be more prominent in higher-income populations with greater discretionary spending capacity.
+While this may seem counterintuitive to some policy narratives, it aligns with economic theory suggesting that disposable income is a prerequisite for discretionary spending, including gambling. This result challenges the common narrative that sports betting is driven primarily by economic desperation. This indicates instead that participation may be more prominent in higher-income populations with greater discretionary spending capacity.
 
 States with greater proportions of middle- and upper-income brackets often also had higher per capita betting revenue, offering yet another lens into how income levels may facilitate or constrain sports betting activity. These visuals suggest that sports betting in the United States is not predominantly driven by poverty, but rather may be a behavior more concentrated among middle- and higher-income earners. This finding directly complicates common assumptions and reveals the value of visualizing normalized and disaggregated income data alongside betting metrics. 
 
-Our analysis underscores that betting participation could be shped less by financial distress and more by access, regulation, opportunity cost, or any other factors often underexplored in blanket narratives about gamblin behavior.
+Our analysis underscores that betting participation could be shped less by financial distress and more by access, regulation, opportunity cost, or any other factors often underexplored in blanket narratives about gambling behavior.
 
 
 
