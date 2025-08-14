@@ -113,14 +113,23 @@ By incorporating both normalized and disaggregated income measures, we were able
 
 To visualize geographic variation in income and betting simultaneously, we employed the use of choropleth maps. The map in Figure 9 displays normalized betting `handle_per_household`, in relation to percentage of low-income household within each state. 
 
+This choropleth map reveals distinct geographical patterns in the relationship between income and betting behavior that are not evident from scatterplots alone. The map highlights two primary regions with a high sports betting handle per household. First, a cluster in the Northeast is characterized by higher-income households and a high handle. Second, a corridor from the West through the Central U.S. shows similar high-volume betting markets, suggesting that this behavior is not confined to a single demographic profile. A particularly notable finding is the cluster of states in the South  where a higher percentage of low-income households corresponds with a high handle per household. 
+
+This contrasts sharply with the Northeast and suggests that in these specific states, sports betting may represent a significant expenditure for lower-income households. Finally, the map shows that states with a low handle per household are distributed across the country and the income spectrum, with states like Washington categorized as higher-income, low-handle and others like West Virginia as lower-income, low-handle. This demonstrates that a low betting handle is not solely determined by income but is likely influenced by other variables such as state-specific regulations or market maturity.
+
 <figure id="fig-combo_maps">
   <img src="figures/map2.png" alt="combo_maps" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 9: Maps normalized revenue per household by state and % of households of low-income households (defined as under $35k).
+    Figure 9: Choropleth map illustrating the relationship between the percentage of low-income households and sports betting handle per household across states. The color of each state represents a combination of its income profile (on the x-axis) and its handle per household (on the y-axis). States reveal a higher frequency of having a higher income relationship with handle contribution.
   </figcaption>
 </figure>
 
-These maps enable side-by-side comparison of betting intensity and economic hardship across states. Notably, states with higher concentrations of low-income households, such as Mississippi and West Virginia, tend to have lower per-household betting revenue. This reinforces the earlier observation that sports betting may not be concentrated in economically distressed regions, but rather in areas with a larger share of middle- and high-income households. This highlights outliers, such as states with modest income profiles but unexpectedly high betting activity, prompting further inquiry into regulatory differences, cultural norms, or marketing intensity as potential drivers.
+This map shows how income levels and sports betting activity intersect across states. Higher-income states with high betting activity appear in the Northeast, Midwest, and Southwest, while medium-income states generally show lower to moderate betting levels. Lower-income, high-betting states are rare, but the presence of some lower-income states with moderate betting could signal potential vulnerability to gambling-related harm.
+This map shows that the states with the highest betting activity per household are often not the ones with the highest percentage of low-income households — in fact, many of them fall in higher-income categories. Lower-income, high-betting states are rare, which challenges the traditional belief that gambling is primarily driven by poverty. Instead, the pattern we see here supports our finding that sports betting is more common among affluent, educated, and digitally connected populations — likely driven by greater internet access, cultural normalization, and disposable income.
+
+This finding went against our initial hypothesis that sports betting activity would be most concentrated in states with a higher percentage of low-income households, driven by the theory that gambling serves as a means of seeking economic relief. The distinct visualization of high betting activity in high-income states and the rarity of the opposite challenged this assumption. This observation was a crucial turning point, inspiring us to create a scatterplot to further explore this relationship. By plotting the percentage of low-income households against the handle per household, we could more precisely verify whether this inverse relationship held true across all states or if the regional patterns observed on the map were the result of other confounding variables.
+
+
 
 <figure id="fig-low_income">
   <img src="figures/scatter_in.png" alt="low_income" width="800">
