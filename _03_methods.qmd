@@ -1,1 +1,5 @@
-# Methods
+# Appendix
+
+The following appendix provides more supporting materials that help complement the main analysis.
+
+## Data Dictionaries {#data dictionary}
