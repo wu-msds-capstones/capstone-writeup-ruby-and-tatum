@@ -1,9 +1,10 @@
 ---
-title: "Capstone Project"
-subtitle: Subtitle
+lightbox: auto
+title: "The Odds of Participation"
+subtitle: Socioeconomic Predictors of Sports-Gambling Activity and Its Implications
 authors:
-  - Bob
-  - Jane
+  - Tatum Good
+  - Ruby Thompson
 bibliography: references.bib
 title-block-banner: true
 format: 
@@ -15,8 +16,8 @@ format:
 
 {{< include _01_intro.qmd >}}
 {{< include _02_background.qmd >}}
-{{< include _03_methods.qmd >}}
 {{< include _04_data.qmd >}}
 {{< include _05_results.qmd >}}
 {{< include _06_conclusions.qmd >}}
 {{< include _07_references.qmd >}}
+{{< include _03_methods.qmd >}}

@@ -1,1 +1,108 @@
-# Methods
+# Appendix
+
+The following appendix provides supporting materials that complement the main analysis. This does not include any mutated variables that were created during the statistical thinking section.
+
+## Data Dictionaries {#data-dictionary}
+
+::: {.callout-note collapse=true title="location"}
+
+Stores geographic information.
+
+| **Variable**     | **Name**       | **Description**                                                 |
+|------------------|----------------|-----------------------------------------------------------------|
+| `geoid`          | Geographic ID  | Unique geographic identifier (e.g., a FIPS code). Used in [`income_distribution`](#income_distribution), [`income_summary`](#income_summary), [`edu_long`](#edu_long), and [`clean_sports`](#clean_sports). |
+| `place_name`     | Place Name     | Name of the geographic area (e.g., "Los Angeles County, CA").   |
+
+:::
+
+::: {.callout-note collapse=true title="household_type"}
+
+Categorizes different types of households.
+
+| **Variable**         | **Name**          | **Description**                                         |
+|----------------------|------------------|---------------------------------------------------------|
+| `household_type_id`  | Household Type ID | Unique identifier for each household type. Used in [`income_distribution`](#income_distribution) and [`income_summary`](#income_summary). |
+| `type_name`          | Type Name         | Name of the household type (e.g., "Family household").  |
+
+:::
+
+::: {.callout-note collapse=true title="income_brackets"}
+
+Defines the different categories or ranges for income.
+
+| **Variable**       | **Name**          | **Description**                                                      |
+|--------------------|------------------|----------------------------------------------------------------------|
+| `bracket_id`       | Bracket ID        | Unique identifier for each income bracket. Used in [`income_distribution`](#income_distribution). |
+| `bracket_name`     | Bracket Name      | Descriptive name for the income bracket (e.g., "$50,000 - $75,000"). |
+
+:::
+
+::: {.callout-note collapse=true title="income_distribution"}
+
+Stores the distribution of household income across different income brackets for specific locations and years.
+
+| **Variable**         | **Name**             | **Description**                                                                                   |
+|----------------------|----------------------|---------------------------------------------------------------------------------------------------|
+| `year`               | Year                 | Year the data was collected.                                                                      |
+| `geoid`              | Geographic ID        | Links to [`location`](#location).                                                                |
+| `bracket_id`         | Bracket ID           | Links to [`income_brackets`](#income_brackets) to specify the income range.                       |
+| `household_type_id`  | Household Type ID     | Links to [`household_type`](#household_type).                                                     |
+| `percentage`         | Percentage           | Percentage of households in a specific income bracket for a given year, location, and household type. |
+
+:::
+
+::: {.callout-note collapse=true title="income_summary"}
+
+Provides aggregated summary statistics about income for specific locations and years.
+
+| **Variable**         | **Name**             | **Description**                                                           |
+|----------------------|----------------------|---------------------------------------------------------------------------|
+| `year`               | Year                 | Year the data was collected.                                              |
+| `geoid`              | Geographic ID        | Links to [`location`](#location).                                         |
+| `household_type_id`  | Household Type ID     | Links to [`household_type`](#household_type).                             |
+| `total_households`   | Total Households     | Total number of households for that year, location, and household type.   |
+| `med_income_dollars` | Median Income        | Median household income in dollars.                                       |
+
+| `mean_income_dollars`| Mean Income           | Mean household income in dollars.                                        |
+
+:::
+
+::: {.callout-note collapse=true title="age_group_map"}
+
+Defines the different age groups used in other tables.
+
+| **Variable**    | **Name**         | **Description**                                     |
+|-----------------|-----------------|-----------------------------------------------------|
+| `age_group_id`  | Age Group ID     | Unique identifier for each age group. Used in [`edu_long`](#edu_long). |
+| `age_group`     | Age Group        | Descriptive name for the age range (e.g., "18–24"). |
+
+:::
+
+::: {.callout-note collapse=true title="edu_long"}
+
+Stores education-related data over time and across different locations.
+
+| **Variable**     | **Name**         | **Description**                                                  |
+|------------------|-----------------|------------------------------------------------------------------|
+| `year`           | Year             | Year the data was collected.                                     |
+| `geoid`          | Geographic ID    | Links to [`location`](#location).                                |
+| `age_group_id`   | Age Group ID     | Links to [`age_group_map`](#age_group_map) to define the age range. |
+| `level_name`     | Education Level  | Education level (e.g., "High school graduate").                  |
+| `count`          | Count            | Number of people attaining the specific education level.         |
+
+:::
+
+::: {.callout-note collapse=true title="clean_sports"}
+
+Contains financial or event data related to sports, linked to specific locations and years.
+
+| **Variable**  | **Name**        | **Description**                                              |
+|---------------|----------------|--------------------------------------------------------------|
+| `year`        | Year            | Year the data was collected.                                 |
+| `geoid`       | Geographic ID   | Links to [`location`](#location).                             |
+| `handle`      | Handle          | Represents bets placed, number of participants, or similar. |
+| `revenue`     | Revenue         | Revenue generated.                                           |
+| `hold`        | Hold            | Likely profit or percentage of handle retained.              |
+| `taxes`       | Taxes           | Taxes collected.                                             |
+
+:::
