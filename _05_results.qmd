@@ -26,7 +26,7 @@ Our analysis utilized state-level data and focused on three key predictors: mean
   </figcaption>
 </figure>
 
-A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. To address the issue of population bias, we decided to normalize handle by dividing it by the total number of households, creating the handle_per_household metric. This caused a significant shift in our model's performance metrics, as shown below:
+A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. The involvement of the total households variable seems to be skewing our data. To address this issue of population bias, we decided to normalize handle by dividing it by the total number of households, creating the handle_per_household metric. This caused a significant shift in our model's performance metrics, as shown below:
 
 | Variable        | Pre-Normalization | Post-Normalization |
 |-----------------|-------------------|--------------------|
