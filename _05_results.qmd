@@ -22,7 +22,7 @@ Our analysis utilized state-level data and focused on three key predictors: mean
 <figure id="fig-corr_income">
   <img src="figures/figure2b.png" alt="corr_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3: Correlation analysis exploring linear relationships between income and sportsbetting metrics where the biggest correlations across our data are between mean_income_dollars with handle or revenue.
+    Figure 2: Correlation analysis exploring linear relationships between income and sportsbetting metrics where the biggest correlations across our data are between mean_income_dollars with handle or revenue.
   </figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ This grouped bar chart was created to compare regional averages of sports bettin
 <figure id="fig-mean_hand">
   <img src="figures/figure3a.png" alt="mean_hand" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 5: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
+    Figure 3: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
   </figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ To better understand geographic variance, we used choropleth maps to visualize s
 <figure id="fig-combo1">
   <img src="figures/figure3b.png" alt="combo1" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 6: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor's degree.
+    Figure 4: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor's degree.
   </figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ At this point in our education analysis we were seeing strong trends of advanced
 <figure id="fig-combo2">
   <img src="figures/figure3c.png" alt="combo2" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 7: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. advanced degree rates.
+    Figure 5: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. advanced degree rates.
   </figcaption>
 </figure>
 
@@ -120,7 +120,7 @@ This contrasts sharply with the Northeast and suggests that in these specific st
 <figure id="fig-combo_maps">
   <img src="figures/map2.png" alt="combo_maps" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 9: Choropleth map illustrating the relationship between the percentage of low-income households and sports betting handle per household across states. The color of each state represents a combination of its income profile (on the x-axis) and its handle per household (on the y-axis). States reveal a higher frequency of having a higher income relationship with handle contribution.
+    Figure 6: Choropleth map illustrating the relationship between the percentage of low-income households and sports betting handle per household across states. The color of each state represents a combination of its income profile (on the x-axis) and its handle per household (on the y-axis). States reveal a higher frequency of having a higher income relationship with handle contribution.
   </figcaption>
 </figure>
 
@@ -135,7 +135,7 @@ As shown in Figure 10, this scatterplot provided the final confirmation, reveali
 <figure id="fig-low_income">
   <img src="figures/scatter_in.png" alt="low_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 10: Scatterplot showing the relationship between a state's average sports betting handle per household and its percentage of low-income households. The downward-sloping red line represents the linear trend, indicating a negative correlation between the two variables.
+    Figure 7: Scatterplot showing the relationship between a state's average sports betting handle per household and its percentage of low-income households. The downward-sloping red line represents the linear trend, indicating a negative correlation between the two variables.
   </figcaption>
 </figure>
 
