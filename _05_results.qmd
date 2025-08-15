@@ -44,7 +44,6 @@ These results complement our education analysis by highlighting that not only do
 
 
 ## Machine Learning
-
 As mentioned above, we employed a random forest regression model to understand the relative importance of different education levels in predicting per capita sports betting activity. Machine learning models, particularly methods like random forests, are used for uncovering nonlinear relationships and interactions between variables that standard linear regression might miss. Linear models assume additive, independent relationships and normally distributed residuals; Random Forests handles nonlinear relationships and potential multicollinearity between education categories, which are likely correlated in real-world populations.
 
 Our random forest model was built using the `randomForest` package in R. The outcome variable was `hand_per_cap` with the same predictors as our statistical thinking linear model. (Percentages of populations with a certain education level)  We trained the model with feature importance analysis, helping us identify which variables contributed most to the prediction of sports betting handle.
@@ -67,8 +66,10 @@ While our statistical thinking and machine learning revealed some potential tren
 
 
 ## Data Visualization
+Because our study investigates structural socioeconomic predictors of sports betting participation across U.S. states, visualization allowed us to explore spatial and demographic variation that would be obscured in a purely tabular or statistical summary. This was specifically helpful for our research question because of the twenty-six states that were relevant to our analysis. To evaluate education, we employed three types of visual techniques: grouped bar charts, choropleth maps, and bivariate scatterplots with linear models.
+---
 
-Because our study investigates structural socioeconomic predictors of sports betting participation across U.S. states, visualization allowed us to explore spatial and demographic variation that would be obscured in a purely tabular or statistical summary. Each graphic was chosen and designed to make abstract trends in the data tangible. This was specifically helpful for our research question because of the twenty-six states that were relevant to our analysis. To evaluate education, we employed three types of visual techniques: grouped bar charts, choropleth maps, and bivariate scatterplots with linear models.
+This grouped bar chart was created to compare regional averages of sports betting contribution and educational attainment per state. Regional grouping (Midwest, Northeast, South, and West) helped reduce state-level noise and highlight trends across large geographies. 
 
 <figure id="fig-mean_hand">
   <img src="figures/figure3a.png" alt="mean_hand" width="800">
@@ -77,9 +78,10 @@ Because our study investigates structural socioeconomic predictors of sports bet
   </figcaption>
 </figure>
 
-This grouped bar chart was created to compare regional averages of sports betting contribution and educational attainment. Using regional grouping (Midwest, Northeast, South, and West) helped reduce state-level noise and highlight macro trends across large geographies. The decision to normalize state betting volume by national handle (rather than just raw values) allows for meaningful cross-region comparison despite population differences, as mentioned earlier. 
+Including education categories side-by-side reveals internal contrasts. And if you point your attention to the bachelors degree and graduate degree groups and compare them to handle contribution, (on the right most side) you can see the progression of increase and decrease between the regions follows the same progression. This is different from the No High School Diploma and High School Diploma columns where there are no clear similarities to the handle contribution. This expands on the trends that we have been seeing; pointing to that higher education correlates with higher sports betting handle state-wide.
+---
 
-Including education categories side-by-side reveals internal contrasts: for example, the South has the highest proportion of residents with only a high school diploma (**16.4%**) but a lower mean contribution to national sports betting handle (**3.3%**). Conversely, the West and Northeast show higher bachelor’s and graduate degree rates, and they also contribute disproportionately more to national handle. These visuals suggest that higher educational attainment may correlate with greater sports betting participation, a surprising and strong reversal of our original hypothesis.  
+To better understand geographic variance, we used choropleth maps to visualize state-level differences in both betting behavior and education attainment. Comparing the handle per capita map (left) with a visualization of advanced degree prevalence (right) allowed us to visually test whether educational attainment is geographically co-located with higher levels of betting activity. We particularly chose to visualize the attainment of a bachelor's degree or higher based on the results from the models and the previous graphic.
 
 <figure id="fig-combo1">
   <img src="figures/figure3b.png" alt="combo1" width="800">
@@ -88,26 +90,24 @@ Including education categories side-by-side reveals internal contrasts: for exam
   </figcaption>
 </figure>
 
+A noticeable feature of this graphic is that the Northeastern region stands out on both maps, high in handle per person and in advanced degree rates. A second area I would like to point your attention to is the midwest and parts of the south, where the progression of education rates and betting handle coincide. While not every state or region have perfect alignment, there are notable similarities between the two maps. 
+---
 
-To better understand geographic variance, we used choropleth maps to visualize state-level differences in both betting behavior and education attainment. Mapping handle per capita better reflects how intensely betting is occurring per resident rather than simply the sheer total. Pairing this map with a visualization of bachelor’s degree prevalence allowed us to visually test whether educational attainment is geographically co-located with higher levels of betting activity. We particularly chose to visualize bachelor's degrees based on the results from the linear model, which weight bachelor's degrees as having the highest impact on sports betting handle. 
-
-A noticeable feature of this graphic is that Northeastern states like New Jersey and New York stand out on both maps, high in handle per person and in bachelor’s degree rates, further supporting the idea that betting volume is not purely driven by economic desperation or low education levels. This falls in line with previous analysis from our region visualization showing higher betting contributions and education in the northeast. 
+At this point in our education analysis we were seeing strong trends of advanced education correlating with higher handle. So we created two scatterplots with trend lines as a final visual to evaluate this trend. 
 
 <figure id="fig-combo2">
   <img src="figures/figure3c.png" alt="combo2" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 7: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. bachelor’s degree rates.
+    Figure 7: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. advanced degree rates.
   </figcaption>
 </figure>
 
+On the left, we see a negative correlation between the percentage of adults with only a high school diploma and their contribution to national handle. On the right, when looking at advanced degree attainment, we observe a positive relationship. While both graphics do have some divergence, there are clear trend lines perpetuating the positive and negative correlations. 
 
-To quantify the relationships suggested by our bar chart and map visualizations, we used scatterplots with fitted linear regression lines. This approach is effective for testing the direction and form of a relationship between two continuous variables; here, educational attainment percentage and percentage of national handle per state. 
+---
+Ultimately, these visualizations further debunked our hypothesis, instead, states with higher proportions of individuals with bachelors and graduate degrees appear to accumulate more sports betting handle. 
 
-On the left, we see a negative correlation between the percentage of adults with only a high school diploma and their state’s betting contribution by residents. This challenges typical gambling trends that lower educational attainment drives betting behavior. 
-
-On the right, we observe a positive relationship between bachelor's degree attainment and national handle share. 
-
-Ultimately, these visualizations further helped to debunk our hypothesis, instead, states with higher proportions of college-educated adults appear to participate more in sports betting, not less– a finding that would be difficult to identify through tables or regression coefficients alone.
+---
 
 We did a similar approach to explore the relationship between income and sports betting participation across U.S. states. These visual tools helped us examine how both average and low-income populations relate to betting behavior, using a combination of scatterplots and choropleth maps. By incorporating both normalized and disaggregated income measures, we were able to contextualize betting activity within broader socioeconomic landscapes and challenge simplistic assumptions about gambling participation.
 
@@ -150,8 +150,15 @@ Our analysis underscores that betting participation could be shped less by finan
 
 We used publicly available datasets from the U.S. Census and state-reported sports betting metrics. This approach minimized privacy risks, as no personally identifiable information (PII) was collected or processed at any stage of the analysis. Nevertheless, working with demographic and behavioral indicators, such as income, education, and gambling activity, still required caution. Even when data is de-identified, aggregation can lead to the reinforcement of stereotypes or the masking of structural inequities. To mitigate this risk, we chose to analyze only state-level trends, avoiding county- or zip-code-level disaggregation that could disproportionately spotlight or stigmatize smaller or more vulnerable populations; and we encourage future research into this sector to evaluate aggregated data as a precaution as well. 
 
-We were careful not to frame our findings in terms of moral judgment or individual responsibility, instead focusing on structural correlations and the potential for policy-level interventions. If future analysis were to consist of individual-level analysis, findings from that study could open the door to manipulative use of people’s data. For example, if a sports-betting company can predict an individual’s behavior associated with gambling, they can direct specialized ads and notifications to maximize handle from that user. This could lead to financial disturbance in that person's life, especially if they already struggle with gambling habits. 
+We were careful not to frame our findings in terms of moral judgment or individual responsibility, instead focusing on structural correlations that imply there are populations who might be vulnerable to misuse. If future analysis were to consist of individual-level analysis, findings from that study could open the door to manipulative use of people’s data. For example, if a sports-betting company can predict an individual’s behavior associated with gambling, they can direct specialized ads and notifications to maximize handle from that user. This could lead to financial disturbance in that person's life, especially if they already struggle with gambling habits. 
 
-Another ethical concern lies in bias baked into the original data sources. U.S. Census data, while comprehensive, has known limitations in how it categorizes income and education. It may undercount certain populations (especially undocumented individuals, rural residents, and Indigenous communities), which can skew representational accuracy. Sports betting data, on the other hand, only includes legal, reported activity, ignoring illegal or unregulated markets where participation may also be significant, particularly in states that have not legalized betting. This creates an incomplete picture of the true landscape and potentially biases our conclusions toward the behavior of more affluent, digitally connected populations who are more likely to use app-based platforms. Our analysis consisted of only 26 states, barely more than half of US states. While we prefaced this in our writing, if it were not properly disclosed it could lead to over-generalized assumptions about U.S. sports betting trends.
+However, with that recommendation in mind, it is worth noting the potential benefits of individual-level data. If sports betting apps could create a dashboard that presents a user’s habits to the average across the app, it could help the user recognize if their behavior is entering dangerous territory. While this would clearly help sports betting apps maintain a user friendly environment, we would urge nation-wide policy to guide use of this data; limiting the use cases of this data for strictly behavioral health, and prohibiting companies to use it for any form of marketing or targeted promotions for users. 
 
-Lastly, we would like to recognize how our results could be interpreted, or misinterpreted, in public discourse. Gambling is a socially and politically charged topic, often laden with stigma. Suggesting that certain populations are more likely to gamble can quickly spiral into harmful narratives about irresponsibility or moral failing. Our aim was not to pathologize individuals, but to investigate structural patterns that may reflect underlying disparities in access, education, or economic opportunity. To that end, our findings are not meant to be deterministic conclusions, but rather context for further research and general awareness. 
+Another ethical concern lies in bias baked into the original data sources. U.S. Census data, while comprehensive, could have limitations in how it categorizes income and education. It may undercount certain populations (especially undocumented individuals, rural residents, and Indigenous communities), which can skew representational accuracy. 
+
+Sports betting data, on the other hand, only includes legal, reported activity, ignoring illegal or unregulated markets where participation may also be significant, particularly in states that have not legalized betting. This creates an incomplete picture of the true landscape and potentially biases our conclusions toward the behavior of more affluent, digitally connected populations who are more likely to use app-based platforms. 
+
+Our analysis consisted of only 26 states, barely more than half of US states. While we prefaced this in our writing, if it were not properly disclosed it could lead to over-generalized assumptions about U.S. sports betting trends.
+
+Lastly, we would like to recognize how our results could be interpreted, or misinterpreted, in public discourse. Gambling is a socially and politically charged topic, often laden with stigma. Suggesting that certain populations are more likely to gamble can quickly spiral into harmful narratives about irresponsibility or moral failing. Our aim was not to pathologize individuals, but to investigate structural patterns that may reflect underlying disparities in access, education, or economic opportunity. To that end, our findings are not meant to be deterministic conclusions, but rather context for further research, general awareness, or future policies to protect users.
+
