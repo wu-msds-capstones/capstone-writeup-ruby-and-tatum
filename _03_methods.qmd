@@ -1,6 +1,6 @@
 # Appendix
 
-The following appendix provides supporting materials that complement the main analysis.
+The following appendix provides supporting materials that complement the main analysis. This does not include any mutated variables that were created during the statistical thinking section.
 
 ## Data Dictionaries {#data-dictionary}
 
