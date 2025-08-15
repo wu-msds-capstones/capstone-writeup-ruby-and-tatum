@@ -13,6 +13,8 @@ Linear regression allowed us to estimate how each education category contributes
 
 While the model showed potential correlation, it doesn't necessarily mean it correlated in favor of our hypothesis, so the next step for the education analysis was to further evaluate in what way these variables interacted with one another, which we evaluate starting in the next section. The model yielded a modest R-squared value of **0.2907**, indicating that approximately **29.07%** of the variance in sports betting revenue per capita can be explained by educational attainment variables. This suggests other factors (such as income) are also influencing participation. 
 
+---
+
 We applied a similar statistical thinking approach to explore the potential correlation between income levels and sports betting activity. Our income model incorporated both household count and income variables, using per-household normalization to avoid misleading conclusions driven by raw scale. Before modeling anything, we conducted a correlation analysis to evaluate the strength of linear relationships between income metrics and sports betting variables (see Figure 3). This preliminary step confirmed strong correlations between total households and both handle and revenue, as well as moderate correlations with income metrics. 
 
 Our analysis utilized state-level data and focused on three key predictors: mean income (`mean_income_dollars`), median income (`med_income_dollars`), and the total number of households (`total_households`). We first modeled total sports betting handle as a function of these variables. As shown in Figure 3, the results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well. A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture.
@@ -52,6 +54,8 @@ From the model output, we observe that the coefficients suggest a strong positiv
 
 This convergence across one parametric model and one non-parametric model makes us confident that our findings are not artifacts of model structure or assumptions. In fact, Random Forest’s showing the same insight boosts our confidence that the relationship is meaningful and not merely coincidental or driven by outliers. These findings give us sufficient motivation to move on to visualizing the specific trends between bachelor's degree attainment and sports betting handle.
 
+---
+
 ​​To complement our statistical regression analysis and further examine the relationship between income and sports betting activity, we applied both linear and logistic machine learning models using the `caret` package in R. These models provided different analytical lenses: regression for predicting a continuous outcome (`handle_per_household` from sports betting) and classification for distinguishing between “high” and “low” sports betting states based on income-related variables. This dual approach allowed us to evaluate whether income metrics meaningfully predict betting participation, and whether such effects persist across model types.
 
 We began by training a multiple linear regression model, using `handle_per_household` as the continuous outcome. Predictor variables included `mean_income_dollars`, `med_income_dollars`, and `total_households`. In this model, total_households emerged as a statistically significant positive predictor (**p = 0.0025**), while both mean and median income had small, non-significant coefficients. This suggests that, at the state level, the number of households is more closely associated with per-household betting activity than income levels themselves. The model’s R² of **0.459** indicates that about **46%** of the variance in per-household betting revenue is explained by these predictors, reflecting moderate explanatory power. An actual-versus-predicted plot showed points scattered around the 1:1 reference line, consistent with a model that captures some—but not all—of the variability.
@@ -67,7 +71,6 @@ While our statistical thinking and machine learning revealed some potential tren
 
 ## Data Visualization
 Because our study investigates structural socioeconomic predictors of sports betting participation across U.S. states, visualization allowed us to explore spatial and demographic variation that would be obscured in a purely tabular or statistical summary. This was specifically helpful for our research question because of the twenty-six states that were relevant to our analysis. To evaluate education, we employed three types of visual techniques: grouped bar charts, choropleth maps, and bivariate scatterplots with linear models.
----
 
 This grouped bar chart was created to compare regional averages of sports betting contribution and educational attainment per state. Regional grouping (Midwest, Northeast, South, and West) helped reduce state-level noise and highlight trends across large geographies. 
 
@@ -79,7 +82,6 @@ This grouped bar chart was created to compare regional averages of sports bettin
 </figure>
 
 Including education categories side-by-side reveals internal contrasts. And if you point your attention to the bachelors degree and graduate degree groups and compare them to handle contribution, (on the right most side) you can see the progression of increase and decrease between the regions follows the same progression. This is different from the No High School Diploma and High School Diploma columns where there are no clear similarities to the handle contribution. This expands on the trends that we have been seeing; pointing to that higher education correlates with higher sports betting handle state-wide.
----
 
 To better understand geographic variance, we used choropleth maps to visualize state-level differences in both betting behavior and education attainment. Comparing the handle per capita map (left) with a visualization of advanced degree prevalence (right) allowed us to visually test whether educational attainment is geographically co-located with higher levels of betting activity. We particularly chose to visualize the attainment of a bachelor's degree or higher based on the results from the models and the previous graphic.
 
@@ -91,7 +93,6 @@ To better understand geographic variance, we used choropleth maps to visualize s
 </figure>
 
 A noticeable feature of this graphic is that the Northeastern region stands out on both maps, high in handle per person and in advanced degree rates. A second area I would like to point your attention to is the midwest and parts of the south, where the progression of education rates and betting handle coincide. While not every state or region have perfect alignment, there are notable similarities between the two maps. 
----
 
 At this point in our education analysis we were seeing strong trends of advanced education correlating with higher handle. So we created two scatterplots with trend lines as a final visual to evaluate this trend. 
 
@@ -104,7 +105,6 @@ At this point in our education analysis we were seeing strong trends of advanced
 
 On the left, we see a negative correlation between the percentage of adults with only a high school diploma and their contribution to national handle. On the right, when looking at advanced degree attainment, we observe a positive relationship. While both graphics do have some divergence, there are clear trend lines perpetuating the positive and negative correlations. 
 
----
 Ultimately, these visualizations further debunked our hypothesis, instead, states with higher proportions of individuals with bachelors and graduate degrees appear to accumulate more sports betting handle. 
 
 ---
