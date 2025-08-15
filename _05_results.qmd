@@ -15,18 +15,18 @@ While the model showed potential correlation, it doesn't necessarily mean it cor
 
 ---
 
-We applied a similar statistical thinking approach to explore the potential correlation between income levels and sports betting activity. Our income model incorporated both household count and income variables, using per-household normalization to avoid misleading conclusions driven by raw scale. Before modeling anything, we conducted a correlation analysis to evaluate the strength of linear relationships between income metrics and sports betting variables (see Figure 3). This preliminary step confirmed strong correlations between total households and both handle and revenue, as well as moderate correlations with income metrics. 
+We applied a similar statistical thinking approach to explore the potential correlation between income levels and sports betting activity. Our income model incorporated both household count and income variables, using per-household normalization to avoid misleading conclusions driven by raw scale. Before modeling anything, we conducted a correlation analysis to evaluate the strength of linear relationships between income metrics and sports betting variables (see Figure 2). This preliminary step confirmed strong correlations between total households and both handle and revenue, as well as moderate correlations with income metrics. 
 
-Our analysis utilized state-level data and focused on three key predictors: mean income (`mean_income_dollars`), median income (`med_income_dollars`), and the total number of households (`total_households`). We first modeled total sports betting handle as a function of these variables. As shown in Figure 3, the results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well. A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture.
+Our analysis utilized state-level data and focused on three key predictors: mean income (`mean_income_dollars`), median income (`med_income_dollars`), and the total number of households (`total_households`). We first modeled total sports betting handle as a function of these variables. As shown in Figure 2, the results indicated that all three predictors were relatively correlated. In particular, total households had the strongest relationship, with both revenue and handle suggesting a scaling effect. Mean income and median income had moderate correlation with both handle and revenue as well.
 
 <figure id="fig-corr_income">
   <img src="figures/figure2b.png" alt="corr_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 3: Correlation analysis exploring linear relationships between income and sportsbetting metrics where the biggest correlations across our data are between mean_income_dollars with handle or revenue.
+    Figure 2: Correlation analysis exploring linear relationships between income and sportsbetting metrics where the biggest correlations across our data are between mean_income_dollars with handle or revenue.
   </figcaption>
 </figure>
 
-A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. These individuals may be driving higher per-household betting revenue, either through discretionary spending or engagement with high-stakes platforms, skewing the overall picture. To address the issue of population bias, we decided to normalize handle by dividing it by the total number of households, creating the handle_per_household metric. This caused a significant shift in our model's performance metrics, as shown below:
+A high mean income coupled with a relatively lower median suggests a skewed distribution with a concentration of wealth among high earners. After some analysis, we found the involvement of the total households variable seems to be skewing our data. To address this issue of population bias, we decided to normalize handle by dividing it by the total number of households, creating the handle_per_household metric. This caused a significant shift in our model's performance metrics, as shown below:
 
 | Variable        | Pre-Normalization | Post-Normalization |
 |-----------------|-------------------|--------------------|
@@ -36,11 +36,9 @@ A high mean income coupled with a relatively lower median suggests a skewed dist
 
 Before normalization, our model explained **72%** of the variance—but much of this was inflated by population effects. We found that total_households was actually inflating our R² and gave a misleading sense of predictive power. After adjusting for population size, our model explains **40%** of the variance and is still highly significant, meaning we’ve removed a key bias while retaining a real relationship. By removing the population size effect, this normalization allowed us to model a true underlying relationship between our variables, making the statistical relationship more clear.
 
-These linear models provided a solid foundation for understanding the direct associations between our variables, but their assumptions of linearity and independence could potentially miss more complex interactions. To explore these deeper relationships and validate our findings using a different analytical lens, we turned to machine learning. These models allowed us to move beyond simple correlations and uncover nonlinear patterns that might be driving sports betting activity, providing a more robust and nuanced view of the data.
+These linear models provided a solid foundation for understanding the direct associations between our variables, but their assumptions of linearity and independence could potentially miss more complex interactions. Taken together, the findings suggest that states with higher mean income levels tend to see greater per-household betting participation, possibly due to increased disposable income or different spending behaviors among higher-income populations.
 
-Taken together, the findings suggest that states with higher mean income levels tend to see greater per-household betting participation, possibly due to increased disposable income or different spending behaviors among higher-income populations.
-
-Conversely, the negative effect of median income may imply that income inequality, or the presence of high earners pulling up the mean, plays a more subtle role in shaping betting habits. This normalization is crucial because raw totals such as total handle or revenue are highly sensitive to population differences across states. Without adjustment, larger states would appear to have higher betting activity simply due to scale. By expressing revenue on a per-household basis, we focus the analysis on behavioral intensity rather than raw volume, making comparisons across states more meaningful. 
+Conversely, the negative effect of median income may imply that income inequality, or the presence of high earners pulling up the mean, plays a more subtle role in shaping betting habits. This normalization is crucial because raw totals such as total handle are highly sensitive to population differences across states. Without adjustment, larger states would appear to have higher betting activity simply due to scale. By expressing handle on a per-household basis, we focus the analysis on behavioral intensity rather than raw volume, making comparisons across states more meaningful. 
 
 These results complement our education analysis by highlighting that not only do demographic factors such as education level relate to sports betting behavior, but so do financial factors. Importantly, both analyses underscore the need to control for population size and distributional effects when modeling large-scale behavioral data such as gambling activity.
 
@@ -77,7 +75,7 @@ This grouped bar chart was created to compare regional averages of sports bettin
 <figure id="fig-mean_hand">
   <img src="figures/figure3a.png" alt="mean_hand" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 5: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
+    Figure 3: Mean percentage of sports betting handle contributed by each region compared to their educational attainment rates.
   </figcaption>
 </figure>
 
@@ -88,7 +86,7 @@ To better understand geographic variance, we used choropleth maps to visualize s
 <figure id="fig-combo1">
   <img src="figures/figure3b.png" alt="combo1" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 6: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor's degree.
+    Figure 4: Left: State-level sports betting handle per person. Right: Percent of population with at least a bachelor's degree.
   </figcaption>
 </figure>
 
@@ -99,7 +97,7 @@ At this point in our education analysis we were seeing strong trends of advanced
 <figure id="fig-combo2">
   <img src="figures/figure3c.png" alt="combo2" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 7: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. advanced degree rates.
+    Figure 5: Left: Betting handle vs. high school diploma rates. Right: Betting handle vs. advanced degree rates.
   </figcaption>
 </figure>
 
@@ -111,7 +109,7 @@ Ultimately, these visualizations further debunked our hypothesis, instead, state
 
 We did a similar approach to explore the relationship between income and sports betting participation across U.S. states. These visual tools helped us examine how both average and low-income populations relate to betting behavior, using a combination of scatterplots and choropleth maps. By incorporating both normalized and disaggregated income measures, we were able to contextualize betting activity within broader socioeconomic landscapes and challenge simplistic assumptions about gambling participation.
 
-To visualize geographic variation in income and betting simultaneously, we employed the use of choropleth maps. The map in Figure 9 displays normalized betting `handle_per_household`, in relation to percentage of low-income household within each state. 
+To visualize geographic variation in income and betting simultaneously, we employed the use of choropleth maps. The map in Figure 6 displays normalized betting `handle_per_household`, in relation to percentage of low-income household within each state. 
 
 This choropleth map reveals distinct geographical patterns in the relationship between income and betting behavior that are not evident from scatterplots alone. The map highlights two primary regions with a high sports betting handle per household. First, a cluster in the Northeast is characterized by higher-income households and a high handle. Second, a corridor from the West through the Central U.S. shows similar high-volume betting markets, suggesting that this behavior is not confined to a single demographic profile. A particularly notable finding is the cluster of states in the South  where a higher percentage of low-income households corresponds with a high handle per household. 
 
@@ -120,7 +118,7 @@ This contrasts sharply with the Northeast and suggests that in these specific st
 <figure id="fig-combo_maps">
   <img src="figures/map2.png" alt="combo_maps" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 9: Choropleth map illustrating the relationship between the percentage of low-income households and sports betting handle per household across states. The color of each state represents a combination of its income profile (on the x-axis) and its handle per household (on the y-axis). States reveal a higher frequency of having a higher income relationship with handle contribution.
+    Figure 6: Choropleth map illustrating the relationship between the percentage of low-income households and sports betting handle per household across states. The color of each state represents a combination of its income profile (on the x-axis) and its handle per household (on the y-axis). States reveal a higher frequency of having a higher income relationship with handle contribution.
   </figcaption>
 </figure>
 
@@ -129,21 +127,21 @@ This map shows that the states with the highest betting activity per household a
 
 This finding went against our initial hypothesis that sports betting activity would be most concentrated in states with a higher percentage of low-income households, driven by the theory that gambling serves as a means of seeking economic relief. The distinct visualization of high betting activity in high-income states and the rarity of the opposite challenged this assumption. This observation was a crucial turning point, inspiring us to create a scatterplot to further explore this relationship. By plotting the percentage of low-income households against the handle per household, we could more precisely verify whether this inverse relationship held true across all states or if the regional patterns observed on the map were the result of other confounding variables.
 
-As shown in Figure 10, this scatterplot provided the final confirmation, revealing a clear negative relationship that ultimately negated our initial hypothesis on the income side as well. As the distribution of low-income households increases, betting activity per household tends to decrease. This pattern directly contradicts the traditional view that gambling is driven by poverty. Instead, it aligns with our finding that sports betting participation is higher among more affluent, educated, and digitally connected populations—likely fueled by greater internet access, cultural acceptance, and disposable income. While the overall trend is undeniable, it is worth noting the outliers of Louisiana and Mississippi, which were among the few lower-income states with higher-than-average handle contributions.
+As shown in Figure 7, this scatterplot provided the final confirmation, revealing a clear negative relationship that ultimately negated our initial hypothesis on the income side as well. As the distribution of low-income households increases, betting activity per household tends to decrease. This pattern directly contradicts the traditional view that gambling is driven by poverty. Instead, it aligns with our finding that sports betting participation is higher among more affluent, educated, and digitally connected populations—likely fueled by greater internet access, cultural acceptance, and disposable income. While the overall trend is undeniable, it is worth noting the outliers of Louisiana and Mississippi, which were among the few lower-income states with higher-than-average handle contributions.
 
 
 <figure id="fig-low_income">
   <img src="figures/scatter_in.png" alt="low_income" width="800">
   <figcaption style="font-size: 8px; color: #555;">
-    Figure 10: Scatterplot showing the relationship between a state's average sports betting handle per household and its percentage of low-income households. The downward-sloping red line represents the linear trend, indicating a negative correlation between the two variables.
+    Figure 7: Scatterplot showing the relationship between a state's average sports betting handle per household and its percentage of low-income households. The downward-sloping red line represents the linear trend, indicating a negative correlation between the two variables.
   </figcaption>
 </figure>
 
 While this may seem counterintuitive to some policy narratives, it aligns with economic theory suggesting that disposable income is a prerequisite for discretionary spending, including gambling. This result challenges the common narrative that sports betting is driven primarily by economic desperation. This indicates instead that participation may be more prominent in higher-income populations with greater discretionary spending capacity.
 
-States with greater proportions of middle- and upper-income brackets often also had higher per capita betting revenue, offering yet another lens into how income levels may facilitate or constrain sports betting activity. These visuals suggest that sports betting in the United States is not predominantly driven by poverty, but rather may be a behavior more concentrated among middle- and higher-income earners. This finding directly complicates common assumptions and reveals the value of visualizing normalized and disaggregated income data alongside betting metrics. 
+States with greater proportions of middle- and upper-income brackets often also had higher per capita betting handle, offering yet another lens into how income levels may facilitate or constrain sports betting activity. These visuals suggest that sports betting in the United States is not predominantly driven by poverty, but rather may be a behavior more concentrated among middle- and higher-income earners. This finding directly complicates common assumptions and reveals the value of visualizing normalized and disaggregated income data alongside betting metrics. 
 
-Our analysis underscores that betting participation could be shped less by financial distress and more by access, regulation, opportunity cost, or any other factors often underexplored in blanket narratives about gambling behavior.
+Our analysis underscores that betting participation could be shaped less by financial distress and more by access, regulation, opportunity cost, or any other factors often underexplored in blanket narratives about gambling behavior.
 
 
 ## Data Ethics
